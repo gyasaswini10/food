@@ -1,0 +1,194 @@
+/* index.css - Global Styles for Food Recipe App */
+
+/* ===== BASE STYLES & VARIABLES ===== */
+:root {
+  --primary-color: #ff6b6b;       /* Appetizing coral */
+  --secondary-color: #4ecdc4;     /* Fresh mint */
+  --dark-color: #2d3436;          /* Dark gray for text */
+  --light-color: #f5f6fa;         /* Off-white background */
+  --success-color: #00b894;       /* Green for success actions */
+  --warning-color: #fdcb6e;       /* Yellow for warnings */
+  --error-color: #d63031;         /* Red for errors */
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+/* ===== LAYOUT STYLES ===== */
+.welcome-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.welcome-header {
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Main Content Styles */
+.welcome-container,
+.home-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.welcome-container h1,
+.home-container h1 {
+  color: var(--dark-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-container p,
+.home-container p {
+  color: #636e72;
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+.home-container h1 {
+  color: var(--primary-color);
+}
+
+/* Footer Styles */
+.welcome-footer {
+  background-color: var(--dark-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* ===== FORM STYLES ===== */
+.form-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.success-message {
+  color: var(--success-color);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  .welcome-container h1,
+  .home-container h1 {
+    font-size: 2rem;
+  }
+}
